@@ -375,6 +375,3 @@ document.addEventListener('visibilitychange', () => {
         canvas.style.opacity = '0.55';
     }
 });
-
-// ========== INIT MESSAGE ==========
-console.log('%c✅ Portfolio Initialized Successfully', 'font-size: 12px; color: #3ddc84; font-weight: bold;');
