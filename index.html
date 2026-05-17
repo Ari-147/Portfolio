@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ali — MERN Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- NOISE OVERLAY -->
+<div class="noise-overlay"></div>
+
+<!-- LOADER -->
+<div id="loader">
+    <div class="loader-inner">
+        <div class="loader-letters">
+            <span>M</span><span>A</span>
+        </div>
+        <div class="loader-bar-wrap">
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+            <div class="loader-percent" id="loaderPercent">0%</div>
+        </div>
+        <div class="loader-tagline">Initializing Portfolio</div>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="logo">
+        <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
+    </div>
+    <div class="nav-links">
+        <a href="#about" class="h nav-link"><span class="nav-num">01</span>About</a>
+        <a href="#projects" class="h nav-link"><span class="nav-num">02</span>Work</a>
+        <a href="#education" class="h nav-link"><span class="nav-num">03</span>Edu</a>
+        <a href="#contact" class="h nav-link"><span class="nav-num">04</span>Contact</a>
+    </div>
+    <div class="nav-status">
+        <span class="status-dot"></span>
+        <span class="status-text">Available for work</span>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span>
+    </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link h">About</a>
+    <a href="#projects" class="mobile-link h">Work</a>
+    <a href="#education" class="mobile-link h">Education</a>
+    <a href="#contact" class="mobile-link h">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+        <div class="hero-eyebrow rv0">
+            <span class="eyebrow-line"></span>
+            Based in Sahiwal, Punjab, Pakistan
+        </div>
+        <h1 class="hero-title">
+            <div class="title-overflow"><span class="title-line tl1">Muhammad</span></div>
+            <div class="title-overflow"><span class="title-line tl2">Ali</span></div>
+            <div class="title-overflow"><span class="title-line tl3 dim">MERN Stack Dev.</span></div>
+        </h1>
+        <div class="hero-meta rv0" style="animation-delay:2.1s">
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Status</span>
+                <span class="hero-meta-value">Available for work</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Focus</span>
+                <span class="hero-meta-value">Full-Stack · AI Integration</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">University</span>
+                <span class="hero-meta-value">COMSATS, 2027</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-side">
+        <div class="hero-scroll rv0" style="animation-delay:2.3s">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </div>
+    <!-- Floating glyphs -->
+    <div class="hero-glyph g1">&lt;/&gt;</div>
+    <div class="hero-glyph g2">{ }</div>
+    <div class="hero-glyph g3">API</div>
+    <div class="hero-glyph g4">AI</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+    <div class="marquee-track">
+        <div class="marquee-item"><span>React.js</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Node.js</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>MongoDB</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Express.js</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Tailwind CSS</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>JWT Auth</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Claude AI</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Google Cloud</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>CI/CD · Vercel</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>RESTful APIs</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>FastAPI</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>QLoRA · LLMs</span><div class="marquee-dot"></div></div>
+        <!-- Duplicate -->
+        <div class="marquee-item"><span>React.js</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Node.js</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>MongoDB</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Express.js</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Tailwind CSS</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>JWT Auth</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Claude AI</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>Google Cloud</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>CI/CD · Vercel</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>RESTful APIs</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>FastAPI</span><div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>QLoRA · LLMs</span><div class="marquee-dot"></div></div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="section-header rv">
+        <span class="section-number">01</span>
+        <span class="section-title">About</span>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+        <div class="rv" style="transition-delay:0.1s">
+            <p class="about-statement">
+                Computer Science student building <strong>production-grade</strong> full-stack apps with the <strong>MERN stack</strong>. I care about clean architecture, performance, and shipping things that actually work.
+            </p>
+            <p class="about-statement" style="margin-top:32px">
+                Certified in <strong>AI/ML</strong>, <strong>Cloud</strong>, and <strong>Database</strong> technologies — and actively exploring AI-integrated web applications.
+            </p>
+
+            <!-- Terminal block -->
+            <div class="terminal-block rv" style="transition-delay:0.25s;margin-top:48px">
+                <div class="terminal-bar">
+                    <span class="tb-dot r"></span>
+                    <span class="tb-dot y"></span>
+                    <span class="tb-dot g"></span>
+                    <span class="tb-title">Ali@portfolio ~ </span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="tc-green">$</span> whoami</p>
+                    <p class="tc-grey">Muhammad Ali — Full-Stack Developer</p>
+                    <p><span class="tc-green">$</span> cat skills.txt</p>
+                    <p class="tc-grey">MERN · FastAPI · AI Integration · QLoRA</p>
+                    <p><span class="tc-green">$</span> echo $STATUS</p>
+                    <p class="tc-white"><span class="cursor-blink">▋</span> Open to opportunities</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-right rv" style="transition-delay:0.2s">
+            <div class="skills-block">
+                <h3>Frontend</h3>
+                <div class="skills-list">
+                    <span class="skill-tag h">React.js</span>
+                    <span class="skill-tag h">Context API</span>
+                    <span class="skill-tag h">React Router</span>
+                    <span class="skill-tag h">Tailwind CSS</span>
+                    <span class="skill-tag h">HTML5 / CSS3</span>
+                    <span class="skill-tag h">Responsive Design</span>
+                </div>
+            </div>
+            <div class="skills-block">
+                <h3>Backend & Database</h3>
+                <div class="skills-list">
+                    <span class="skill-tag h">Node.js</span>
+                    <span class="skill-tag h">Express.js</span>
+                    <span class="skill-tag h">RESTful APIs</span>
+                    <span class="skill-tag h">JWT Auth</span>
+                    <span class="skill-tag h">MongoDB</span>
+                    <span class="skill-tag h">Mongoose ODM</span>
+                    <span class="skill-tag h">Bcrypt</span>
+                </div>
+            </div>
+            <div class="skills-block">
+                <h3>AI / ML</h3>
+                <div class="skills-list">
+                    <span class="skill-tag h">FastAPI</span>
+                    <span class="skill-tag h">Python</span>
+                    <span class="skill-tag h">Transformers</span>
+                    <span class="skill-tag h">QLoRA / PEFT</span>
+                    <span class="skill-tag h">Hugging Face</span>
+                    <span class="skill-tag h">Gradio</span>
+                    <span class="skill-tag h">NLP Intent Detection</span>
+                </div>
+            </div>
+            <div class="skills-block">
+                <h3>Tools & Platforms</h3>
+                <div class="skills-list">
+                    <span class="skill-tag h">Git / GitHub</span>
+                    <span class="skill-tag h">Vercel</span>
+                    <span class="skill-tag h">Postman</span>
+                    <span class="skill-tag h">Cloudinary</span>
+                    <span class="skill-tag h">Google Cloud</span>
+                    <span class="skill-tag h">CI/CD</span>
+                </div>
+            </div>
+
+            <div class="skills-block">
+                <h3>Certifications</h3>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <span class="cert-name">Intro to Generative AI</span>
+                        <span class="cert-org">Google Cloud</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-name">Intro to Large Language Models</span>
+                        <span class="cert-org">Google Cloud</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-name">Google Arcade Level 1</span>
+                        <span class="cert-org">Google Cloud</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-name">CRUD Operations</span>
+                        <span class="cert-org">MongoDB University</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-name">Introduction to Claude AI</span>
+                        <span class="cert-org">Anthropic</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section rv">
+    <div class="stats-grid">
+        <div class="stat-item tilt-card">
+            <div class="stat-number counter" data-target="5">3</div>
+            <div class="stat-label">Production Projects</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="width:83%"></div></div>
+        </div>
+        <div class="stat-item tilt-card">
+            <div class="stat-number counter" data-target="28">20+</div>
+            <div class="stat-label">API Endpoints Built</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="width:93%"></div></div>
+        </div>
+        <div class="stat-item tilt-card">
+            <div class="stat-number counter" data-target="8">4</div>
+            <div class="stat-label">Industry Certifications</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="width:67%"></div></div>
+        </div>
+        <div class="stat-item tilt-card">
+            <div class="stat-number counter" data-target="95">93</div>
+            <div class="stat-label">Lighthouse Score</div>
+            <div class="stat-bar"><div class="stat-bar-fill" style="width:95%"></div></div>
+        </div>
+    </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="section-header rv">
+        <span class="section-number">02</span>
+        <span class="section-title">Selected Work</span>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="projects-list">
+        <!-- Project 1 -->
+        <div class="project-row rv tilt-card">
+            <div class="project-num">01</div>
+            <div class="project-content">
+                <div class="project-type">Full-Stack MERN Application · 2026</div>
+                <h2 class="project-title">KAT Travel<br>Agency</h2>
+                <p class="project-desc">
+                    Hajj &amp; Umrah travel booking platform built end-to-end. 15+ reusable React components, 10+ REST endpoints, JWT auth, Cloudinary storage, and CI/CD deployment on Vercel achieving a Lighthouse score of 90+ on mobile.
+                </p>
+                <div class="project-tags">
+                    <span class="project-tag">React.js</span>
+                    <span class="project-tag">Node.js</span>
+                    <span class="project-tag">Express.js</span>
+                    <span class="project-tag">MongoDB</span>
+                    <span class="project-tag">Tailwind</span>
+                    <span class="project-tag">JWT</span>
+                    <span class="project-tag">Cloudinary</span>
+                    <span class="project-tag">Vercel</span>
+                </div>
+            </div>
+            <div class="project-visual h">
+                <img src="./assets/images/p1.png" alt="KAT Travel Agency">
+                <div class="project-visual-overlay"></div>
+                <div class="project-visual-scan"></div>
+            </div>
+            <div class="project-actions">
+                <a href="https://mern-stack-project-three-vert.vercel.app" target="_blank" class="btn-link h">Live <span class="arr">↗</span></a>
+                <a href="https://github.com/Saim-Chaudhary/MERN-Stack-Project" target="_blank" class="btn-link h">GitHub <span class="arr">↗</span></a>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-row rv tilt-card" style="transition-delay:0.15s">
+            <div class="project-num">02</div>
+            <div class="project-content">
+                <div class="project-type">React + FastAPI + AI Integration · 2025</div>
+                <h2 class="project-title">TaskHive<br>AI Workflow</h2>
+                <p class="project-desc">
+                    Smart workplace communication system where HR messages are analyzed by an AI API to detect task intent versus normal chat. When identified as a task, the system auto-assigns it to the correct employee with deadline details, creating a faster and more reliable task flow.
+                </p>
+                <div class="project-tags">
+                    <span class="project-tag">React.js</span>
+                    <span class="project-tag">FastAPI</span>
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">AI API</span>
+                    <span class="project-tag">NLP Intent Detection</span>
+                    <span class="project-tag">Task Automation</span>
+                    <span class="project-tag">Deadline Assignment</span>
+                    <span class="project-tag">Workflow Management</span>
+                </div>
+            </div>
+            <div class="project-visual h">
+                <img src="./assets/images/p2.png" alt="TaskHive AI Workflow">
+                <div class="project-visual-overlay"></div>
+                <div class="project-visual-scan"></div>
+            </div>
+            <div class="project-actions">
+                <a href="https://github.com/Ari-147/TASKHIVE.git" target="_blank" class="btn-link h">GitHub <span class="arr">↗</span></a>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-row rv tilt-card" style="transition-delay:0.25s">
+            <div class="project-num">03</div>
+            <div class="project-content">
+                <div class="project-type">Browser-based Web Development Playground · 2026</div>
+                <h2 class="project-title">TheForge</h2>
+                <p class="project-desc">
+                    TheForge is a modern, browser-based web development playground built using pure HTML, CSS, and JavaScript. It allows users to create projects, write code, preview output in real time, and manage files — all inside the browser.
+                </p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">DOM Manipulation</span>
+                    <span class="project-tag">Local Storage</span>
+                    <span class="project-tag">Code Editor</span>
+                    <span class="project-tag">Real-time Preview</span>
+                </div>
+            </div>
+            <div class="project-visual h">
+                <img src="./assets/images/p3-TheForge.png" alt="TheForge Web Development Playground">
+                <div class="project-visual-overlay"></div>
+                <div class="project-visual-scan"></div>
+            </div>
+            <div class="project-actions">
+                <a href="https://github.com/Ari-147/TheForge-Online_Compiler.git" target="_blank" class="btn-link h">GitHub <span class="arr">↗</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <div class="section-header rv">
+        <span class="section-number">03</span>
+        <span class="section-title">Education</span>
+        <div class="section-line"></div>
+    </div>
+    <div class="edu-row rv">
+        <div>
+            <div class="edu-period">Aug 2023 — Expected May 2027</div>
+            <div class="edu-degree">BS Computer Science</div>
+            <div class="edu-uni">COMSATS University Islamabad — Sahiwal Campus</div>
+        </div>
+        <div>
+            <div class="edu-period" style="margin-bottom:16px">Relevant Coursework</div>
+            <div class="edu-courses">
+                Data Structures &amp; Algorithms<br>
+                Object-Oriented Programming<br>
+                Database Systems<br>
+                Web Engineering<br>
+                Operating Systems<br>
+                Computer Networks
+            </div>
+        </div>
+    </div>
+    <div class="edu-row rv" style="transition-delay:0.1s">
+        <div>
+            <div class="edu-period">Aug 2021 — July 2023</div>
+            <div class="edu-degree">ICS (Intermediate in Computer Science)</div>
+            <div class="edu-uni">Punjab College, Sahiwal Campus</div>
+        </div>
+        <div>
+            <div class="edu-period" style="margin-bottom:16px">Program</div>
+            <div class="edu-courses">
+                Intermediate in Computer Science
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+    <div class="footer-big rv">
+        Let's build<br><span>something</span><br>great.
+    </div>
+    <div class="footer-bottom rv" style="transition-delay:0.1s">
+        <div class="contact-links">
+            <a href="mailto:ali147ch@gmail.com" class="contact-link h">
+                <span class="cl-label">Email</span>
+                ali147ch@gmail.com
+            </a>
+            <a href="tel:+923271749908" class="contact-link h">
+                <span class="cl-label">Phone</span>
+                +92-327-174-9908
+            </a>
+            <a href="https://github.com/Ari-147" target="_blank" class="contact-link h">
+                <span class="cl-label">GitHub</span>
+                Muhammad Ali
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-ali-ateeq-440602342/" target="_blank" class="contact-link h">
+                <span class="cl-label">LinkedIn</span>
+                Muhammad Ali
+            </a>
+        </div>
+        <div class="footer-right">
+            <p>© 2025 Muhammad Ali</p>
+            <p>Sahiwal, Punjab, Pakistan</p>
+            <p style="margin-top:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;">MERN Stack Developer</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
